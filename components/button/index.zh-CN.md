@@ -15,41 +15,46 @@ group:
 
 ## 何时使用
 
-标记了一个（或封装一组）操作命令，响应用户点击行为，触发相应的业务逻辑。
+在每刻设计系统中共存在 5 种按钮类型。
 
-在 Ant Design 中我们提供了五种按钮。
+- 主按钮：用于主动作点，一个操作区域只能有一个主按钮。
+- 常规按钮：用于没有主次之分的一组动作点。
+- 虚线按钮：常用于表单内部添加操作。
+- 文本按钮：用于最高级的动作点。
+- 危险按钮：排除/移动/修改权限等危险操作，一般需要二次确认。
 
-- 主按钮：用于主行动点，一个操作区域只能有一个主按钮。
-- 默认按钮：用于没有主次之分的一组行动点。
-- 虚线按钮：常用于添加操作。
-- 文本按钮：用于最次级的行动点。
-- 链接按钮：一般用于链接，即导航至某位置。
+每种按钮具有五种状态属性。
 
-以及四种状态属性与上面配合使用。
+- Normal（默认态）：该状态就是按钮正常显示在页面的状态。
+- Hover（悬浮态）：当鼠标指针停留在按钮上时，按钮展示出的反馈。
+- Pressed（点击态）：当鼠标在指针按压按钮时，按钮的效果反馈。
+- Disabled（禁用态）：当页面按钮不可用时，可能是信息未填写完成，可能是操作未达到某种条件要求，按钮会展示不可用状态。对干禁用按钮，可以让鼠标浮上去后展示解禁提示，这样会对用户更友好。
 
-- 危险：删除/移动/修改权限等危险操作，一般需要二次确认。
-- 幽灵：用于背景色比较复杂的地方，常用在首页/产品页等展示场景。
-- 禁用：行动点不可用的时候，一般需要文案解释。
-- 加载中：用于异步操作等待反馈的时候，也可以避免多次提交。
+## 尺寸说明
 
-[完整设计指南](https://ant.design/docs/spec/buttons-cn)
+其中主按钮和默认按钮有三种尺寸。
+
+- Large（大）：大按钮通常用在首页；组件高度为 40，字体大小为 16，字体左右安全距离为 16
+- Middle（中）：中按钮为系统最常见的操作按钮；组件高度为 32，字体大小为 14，字体左右安全距离为 12
+- Small（小）：小按钮通常用在表单内部；组件高度为 24，字体大小为 12，字体左右安全距离为 8
+
+## 交互说明
+
+所有按钮距离页面左或右的边距都为 24，按钮之间的距离都为 8
+
+Middle 常用于表单外部，如 table 页面的操作、弹窗底部操作、表单底部操作等。按钮组一定有一个主按钮，其他均为常规按钮，常规按钮分为一级（蓝色）和二级（灰色）。一般情况下我们会选用常规二级，只有常规按钮和主按钮并无明显主次关系时，常规按钮才会用一级。
+
+Small 常用在表单内部的添加或相关业务处理操作。
+
+<code src="./demo/middle.tsx">Middle 按钮用法</code>
 
 ## 代码演示
 
 <!-- prettier-ignore -->
 <code src="./demo/basic.tsx">按钮类型</code>
-<code src="./demo/icon.tsx">图标按钮</code>
-<code src="./demo/debug-icon.tsx" debug>调试图标按钮</code>
-<code src="./demo/debug-block.tsx" debug>调试按钮block属性</code>
 <code src="./demo/size.tsx">按钮尺寸</code>
-<code src="./demo/disabled.tsx">不可用状态</code>
-<code src="./demo/loading.tsx">加载中状态</code>
-<code src="./demo/multiple.tsx">多个按钮组合</code>
-<code src="./demo/ghost.tsx">幽灵按钮</code>
-<code src="./demo/danger.tsx">危险按钮</code>
-<code src="./demo/block.tsx">Block 按钮</code>
-<code src="./demo/legacy-group.tsx" debug>废弃的 Block 组</code>
-<code src="./demo/chinese-chars-loading.tsx" debug>加载中状态 bug 还原</code>
+<code src="./demo/icon.tsx">图标按钮</code>
+<code src="./demo/disabled.tsx">禁用用状态</code>
 
 ## API
 
