@@ -33,6 +33,8 @@ export default defineConfig({
     // Change antd from `index.js` to `.dumi/theme/antd.js` to remove deps of root style
     antd: require.resolve('./.dumi/theme/antd.js'),
   },
+  base: '/maycur-design/',
+  publicPath: '/maycur-design/',
   extraRehypePlugins: [rehypeAntd],
   extraRemarkPlugins: [remarkAntd],
   extraBabelPresets: [require.resolve('@emotion/babel-preset-css-prop')],
